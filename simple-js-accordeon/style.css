@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+}
+
+.cont {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.accordeon-wrapper {
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    margin-top: 50px;
+}
+
+.accordeon-header {
+    background-color: #aaa;
+    padding: 20px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.accordeon-header:hover {
+    background-color: #ddd;
+}
+
+.accordeon-body {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .4s ease-in;
+}
+
+.accordeon-body > * {
+    padding: 20px;
+    margin: 0;
+    display: block;
+}
