@@ -36,8 +36,8 @@ function setup() {
     window.addEventListener("scroll", setScrolling);
 
     // deal with the mouse wheel
-    window.addEventListener("mousewheel", mouseScroll);
-    window.addEventListener("DOMMouseScroll", mouseScroll);
+    window.addEventListener("mousewheel", mouseScroll, { passive: false });
+    window.addEventListener("DOMMouseScroll", mouseScroll, { passive: false });
 
     animationLoop();
 }
@@ -88,7 +88,6 @@ function setTranslate3DTransform(element, yPosition) {
 function animationLoop() {
     // adjust the image's position when scrolling
     if (scrolling) {
-        debugger
         setTranslate3DTransform(imageContainer, 
                                 -1 * getScrollPosition() / 2);
         scrolling = false;
